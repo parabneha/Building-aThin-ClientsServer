@@ -1,0 +1,34 @@
+The ltsp-server.conf file can be used to set configuration settings for your LTSP server environment.
+/etc/ltsp/ltsp-server.conf
+BASE="/opt/ltsp"
+
+# Space-separated list of TFTP directories to update kernels and initrd's to. 
+TFTP_DIRS="/var/lib/tftpboot /tftpboot /srv/tftp"
+
+# The LTSP subdirectory within the TFTP base directory.
+
+TFTP_BOOT_DIR="ltsp"
+/etc/ltsp/ltsp-build-client.conf
+# The arch or name to install.
+ARCH=i686
+
+# The packages to deinstall from the finished chroot.
+EXCLUDE="man-pages"
+/etc/ltsp/ltsp-chroot.conf
+# The arch or name to mount.
+ARCH=i686
+
+# Whether the package cache should be mounted.
+MOUNT_PACKAGE_CACHE=true
+
+# Whether the dev should be mounted.
+MOUNT_DEV=false
+
+# Whether the proc should be mounted.
+MOUNT_PROC=false
+
+# Whether all should be mounted.
+MOUNT_ALL=false
+
+# Whether /etc/resolv.conf should be copied.
+COPY_RESOLV_CONF=true
